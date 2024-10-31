@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'edit_profil.dart'; // Jangan lupa import halaman profil
 
 class SideBar extends StatelessWidget {
   @override
@@ -41,7 +42,7 @@ class SideBar extends StatelessWidget {
               title: Text('Dashboard',
                   style: TextStyle(color: Colors.white, fontSize: 16)),
               onTap: () {
-                // Tambahkan aksi
+                // Tambahkan aksi untuk Dashboard
               },
             ),
             ListTile(
@@ -49,7 +50,11 @@ class SideBar extends StatelessWidget {
               title: Text('Profile',
                   style: TextStyle(color: Colors.white, fontSize: 16)),
               onTap: () {
-                // Tambahkan aksi
+                // Navigasi ke halaman profil
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditProfileDosen()),
+                );
               },
             ),
             ListTile(

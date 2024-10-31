@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'sidebar.dart';
+import 'pengajuan_setuju.dart';
+import 'pengajuan_tolak.dart';
+import 'pengajuan_proses.dart';
 
 class NotificationScreen extends StatelessWidget {
   // GlobalKey untuk membuka drawer
@@ -102,7 +105,25 @@ class NotificationScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigasi ke halaman berbeda sesuai status pengajuan
+                          String status = submissionList[index]['status']!;
+                          if (status == 'Pengajuan Belum Dapat Disetujui') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PengajuanTolak(),
+                              ),
+                            );
+                          } else if (status == 'Pengajuan Disetujui') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PengajuanTolak(),
+                              ),
+                            );
+                          } 
+                        },
                         child: Text('Lihat'),
                       ),
                     ),
